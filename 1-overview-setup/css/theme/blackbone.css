@@ -1,0 +1,490 @@
+@import url(../../lib/font/Merriweather/merriweather.css);
+@import url(../../lib/font/Atkinson/atkinson.css);
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lilita+One&display=swap');
+
+:root {
+  --color-purpleheart: #e941c1;
+  --color-offwhite: #f9fef0;
+  --color-offwhite-opaque: #f9fef0ed;
+}
+
+section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+  color: #222;
+}
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: var(--color-offwhite);
+  background-color: var(--color-offwhite);
+}
+
+.reveal {
+  font-family: Atkinson;
+  font-size: 42px;
+  font-weight: normal;
+  color: var(--color-purpleheart); }
+
+::selection {
+  color: #fff;
+  background: #bee4fd;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #bee4fd;
+  text-shadow: none; }
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+ .reveal h1 {
+  font-family: 'Black Ops One';
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: normal;
+  text-shadow: none;
+  word-wrap: break-word;
+ }
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 5px 0;
+  color: var(--color-purpleheart);
+  font-family: 'Lilita One';
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: normal;
+  text-shadow: none;
+  word-wrap: break-word;
+}
+
+.reveal h1 { 
+  font-size: clamp(2.5rem,4.5rem,5rem); 
+  text-shadow: none; 
+}
+
+.reveal h2 { 
+  font-size: clamp(2.5rem,3.75rem,4.5rem); 
+  margin: 0 0 0.25em 0;
+}
+
+.reveal h3 { font-size: 1.3em; }
+
+.reveal h4 { font-size: 1em; }
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold; 
+}
+
+.reveal em {
+  font-style: italic; 
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; 
+}
+
+.reveal ol {
+  list-style-type: decimal; }
+
+.reveal ul {
+  list-style-type: disc; }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 50px auto;
+  padding: 5px;
+  font-size: 1.75rem;
+  font-style: normal;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+.reveal q {
+  font-style: italic; }
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none; }
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal; }
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center; }
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right; }
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none; }
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller; }
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller; }
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+.reveal small * {
+  vertical-align: top; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #42affa;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:hover {
+  color: #8dcffc;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #068de9; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none; }
+
+.reveal a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #42affa;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: #42affa; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #42affa; }
+
+.reveal .progress span {
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: #222;
+  }
+}
+
+/* SLIDES */
+
+/* Typography */
+
+.reveal section.slide__title > h2 {
+  color: var(--color-offwhite) !important;
+}
+.reveal section.not-centered h2 {
+  text-align: center;
+}
+.reveal section > h2 > span {
+  font-size: 20px;
+}
+.reveal section strong {
+  color: var(--color-purpleheart);
+  font-size: 1.05em;
+}
+.reveal section.not-centered {
+  text-align: left;
+}
+.reveal .src {
+  font-size: 20px;
+}
+.reveal .center {
+  text-align: center;
+}
+.reveal figcaption.small {
+  font-size: small;
+}
+
+/* Layout */
+.reveal section.slide__title {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 150px) 1fr;
+  text-align: left !important;
+}
+/* chldren */
+.reveal section.slide__title > p {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  width: max-content;
+}
+.reveal section.slide__title > h1 {
+  grid-column: 2/7;
+  grid-row: 2/3;
+}
+.reveal section.slide__title > h2 {
+  grid-column: 2/7;
+  grid-row: 3/4;
+  text-align: right;
+}
+
+/* Flex */
+.reveal .flex__slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.reveal .flex__slide h2 {
+  writing-mode: tb;
+  text-align: left;
+  height: max-content;
+}
+/* Text Contrasts */
+.reveal section.bg-img-txt-overlay p,
+.reveal section.bg-img-txt-overlay ol,
+.reveal section.bg-img-txt-overlay ul {
+  background-color: var(--color-offwhite-opaque);
+}
+.reveal section.bg-img-txt-overlay blockquote {
+  background: var(--color-offwhite-opaque) !important;
+}
+.reveal section.bg-img-txt-overlay p {
+  padding: 1em;
+  text-align: left;
+}
+.reveal section.bg-img-txt-overlay ol {
+  padding: 0.2em 2em;
+  border-radius: 5px;
+}
+
+/* Background Contrast */
+.reveal .apply-dark-bg-filter > .dark-bg-filter {
+  filter: brightness(0.5);
+}
+.reveal .slide-background-content > div {
+  filter: brightness(0.3);
+}
+.reveal .slide-background-content > p,
+.reveal .slide-background-content > ul,
+.reveal .slide-background-content > ol
+{
+  background-color: inherit !important;
+  color: white;
+}
+.reveal .no-bg-filter > div.slide-background-content,
+.reveal .princess-bride-filter > div.slide-background-content {
+  filter: brightness(1.1);
+}
+.reveal .hamburglar-filter div.slide-background-content {
+  filter: brightness(1.75);
+}
+.reveal .she-hulk-filter > div.slide-background-content {
+  filter: brightness(0.65);
+}
+
+.reveal .hamburglar p {
+  margin-top: -200px;
+}
+.reveal .lonely-bg > div.slide-background-content{
+  filter: brightness(1);
+}
+.reveal .bg-contain-me > div.slide-background-content {
+  background-size: contain;
+  background-color: black;
+}
+
+/* LISTS */
+
+.reveal .inline-list > li {
+  display:inline;
+}
+.reveal .inline-list > li:first-child::before {
+  content: "- ";
+}
+
+/* Text Effects */
+
+.text__slicing-bg-img,
+.reveal h2 {
+	background: url('../../img/pink-gradient.jpeg');
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: dynamic 16s infinite linear;
+  filter: brightness(1.25);
+  padding-bottom: 5px;
+}
+.animated-gradient-slow {
+  --bg-size: 400%;
+  background: linear-gradient(
+                40deg,
+                var(--color-purpleheart),
+                var(--color-offwhite),
+                var(--color-purpleheart)
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text !important;
+  -webkit-background-clip: text;
+  animation: move-text-bg-medium 24s infinite linear;
+}
+.animated-gradient-medium {
+  --bg-size: 400%;
+  background: linear-gradient(
+                40deg,
+                var(--color-purpleheart),
+                var(--color-offwhite),
+                var(--color-purpleheart)
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text !important;
+  -webkit-background-clip: text;
+  animation: move-text-bg-medium 16s infinite linear;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animated-gradient-slow {
+    animation: move-text-bg-slow 24s linear infinite;
+  }
+  .animated-gradient-medium {
+    animation: move-text-bg-medium 16s linear infinite;
+  }
+  @keyframes move-text-bg-slow {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+  @keyframes move-text-bg-medium {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+  /* Slice Animation */
+  @keyframes slice {
+    0% {	line-height: 0%; }
+    100% {	line-height: 100%; }
+  }
+  /* Dynamic Background Animation */
+  @keyframes dynamic {
+    0% {	background-position: 0% }
+    100% {	background-position: 100%; }	
+  }
+}

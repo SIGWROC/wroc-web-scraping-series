@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>What is Scraping? Should/Can I Do It?</title>
+
+	<meta name="description" content="Programador Poliglota">
+	<meta name="author" content="Víctor Romário">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/style-vr/style.css">
+	<link rel="stylesheet" href="css/theme/blackbone.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+
+			<!-- TITLE -->
+			<section class="slide__title bg-img-txt-overlay slide-background-content" data-background="img/web-scraping-spidey.gif">
+				<p>
+					Created by: <a href="https://clndgrn.com">Chris Lindgren, PhD</a>
+				</p>
+				<h1 class="text__slicing-bg-img">Web Scraping with Python</h1>
+				<h2>
+					I. Setting you up &amp; understanding the legalities &amp; ethics
+					<br>
+					<img src="img/by-nc-nd.png" 
+							 alt="Creative Commons License: BY-NC-ND" 
+							 width="100px"
+					/>
+				</h2>
+			</section>
+
+			<!-- OVERVIEW -->
+			<section class="flex__slide bg-img-txt-overlay slide-background-content" data-background="img/web-scraping-spidey.gif">
+				<h2>Workshop Series</h2>
+				<ol>
+					<li>Overview &amp; Setup</li>
+					<li class="fragment">HTML &amp; Xpath</li>
+					<li class="fragment">Python Basics</li>
+					<li class="fragment">Scraping with <code>Beautiful Soup</code></li>
+					<li class="fragment">Scraping with <code>selenium</code></li>
+				</ol>
+			</section>
+
+			<!-- 1 OVERVIEW -->
+			<section class="flex__slide slide-background-content bg-img-txt-overlay" data-background="img/web-scraping-spidey.gif">
+				<h2>Overview &amp; Setup</h2>
+				<ol>
+					<li>What is scraping?</li>
+					<li class="fragment">Scraping Legalities &amp; Ethics</li>
+					<li class="fragment">Requirements</li>
+					<li class="fragment">Setup</li>
+					<li class="fragment">Debrief</li>
+				</ol>
+			</section>
+
+			<!-- WHAT'S SCRAPING? -->
+			<section>
+
+				<!-- BIG DEFINITION -->
+				<section class="slide-background-content bg-img-txt-overlay" data-background="img/web-scraping-spidey.gif">
+					<h2>Setting the Terms</h2>
+					<ul>
+						<li class="fragment">
+							<strong>Spiders</strong>: Bots! An agent coded to crawl the web for you. It enacts all of the above.
+						</li>
+						<li class="fragment">
+							<strong>Data scraping</strong>: Extract already structured data from provided server resource.
+						</li>
+					</ul>
+				</section>
+
+				<!-- BIG DEFINITION -->
+				<section class="slide-background-content bg-img-txt-overlay" data-background="img/web-scraping-spidey.gif">
+					<h2>Setting the Terms</h2>
+					<ul>
+						<li class="fragment">
+							<strong>Web scraping</strong>: Extract specific structured content from specific site/page for a variety of purposes, such as creating structured data.
+						</li>
+						<li class="fragment">
+							<strong>Web crawling</strong>: Akin to scraping, but it extracts structured content from <em>multiple</em> sites/pages.
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why learn how to scrape programmatically?</h2>
+					<p>
+						Case: <a href="https://en.wikipedia.org/wiki/List_of_emoticons" target="_blank" rel="noopenner">List of emoticons</a> from Wikipedia.
+					</p>
+				</section>
+
+				<!-- 3 METHODS -->
+				<section>
+					<h2>Three Main Methods</h2>
+					<ol>
+						<li class="fragment">Application Programming Interfaces</li>
+						<li class="fragment">Modules &amp; Scripts</li>
+						<li class="fragment">Software Tools</li>
+					</ol>
+				</section>
+				
+				<!-- APIs 1 -->
+				<section class="not-centered">
+					<h2>Method 1. API <br> <span>(Application Programming Interface)</span></h2>
+					<p>
+						An <em>API</em> provides people (clients) access to resources from another application or service (server), e.g., a set of data features about TikTok videos, based on a search query.
+					</p>
+				</section>
+
+				<!-- APIs Terms -->
+				<section>
+					<h2>Endpoints &amp; Access Tokens</h2>
+					<ul>
+						<li class="fragment">
+							APIs provide "<a href="https://en.wikipedia.org/wiki/Web_API#Endpoints">endpoints</a>" for people/developers to use the provided data.
+						</li>
+						<li class="fragment">
+							Often requires an "<a href="https://en.wikipedia.org/wiki/Access_token">access token</a>"
+						</li>
+					</ul>
+				</section>
+
+				<!-- APIs Examples -->
+				<section>
+					<h2>API Examples</h2>
+					<ul>
+						<li class="fragment">
+							TikTok's <a href="https://developers.tiktok.com/doc/tiktok-api-v2-video-query/">"Video Query"</a>
+						</li>
+						<li class="fragment">
+							Twitter's <a href="https://developer.twitter.com/en/docs/twitter-api/tweets/filtered-stream/introduction">"Filtered Stream"</a>
+						</li>
+						<li class="fragment">
+							Kaggle's <a href="https://www.kaggle.com/docs/api#interacting-with-notebooks">"Notebooks"</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- CUSTOM CODE - What are Modules? -->
+				<section>
+					<h2>Method 2. Modules &amp; Scripts</h2>
+					<ul>
+						<li class="fragment">
+							<strong>Modules / Libraries</strong>: A set of code with methods and/or functions that fulfill a recurrent set of needs and goals.
+						</li>
+						<li class="fragment">
+							<strong>Scripts</strong>: Smaller code files that complete a specific task. Like scraping a page! :-)
+						</li>
+					</ul>
+				</section>
+
+				<!-- CODE - Module Examples -->
+				<section>
+					<h2>Examples of Modules &amp; Scripts</h2>
+					<ul>
+						<li class="fragment">
+							<strong>Python</strong>:
+							<ul class="fragment">
+								<li class="fragment">
+									<strong>General</strong>: <a href="https://beautiful-soup-4.readthedocs.io/en/latest/">Beautiful Soup</a>, <a href="https://scrapy.org/">Scrapy</a>, and <a href="https://selenium-python.readthedocs.io/">Selenium</a> (Selenium is actually a suite of tools that you can be used across multiple languages.)
+								</li>
+								<li class="fragment">
+									<strong>Specific</strong>: <a href="https://github.com/dfreelon/pyktok">Pyktok</a> scrapes video, text, and metadata from Tiktok with no authentication.
+								</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							<strong>R</strong>: <a href="https://www.rdocumentation.org/packages/rvest/versions/1.0.3">rvest</a>
+						</li>
+					</ul>
+				</section>
+
+				<!-- EXISTING WS TOOLS -->
+				<section class="not-centered">
+					<h2>Method 3. Existing Tools</h2>
+					<p>Software tools exist that use APIs to automate the process, such as MassMine.</p>
+					<p class="fragment">
+						<img src="img/massmine-logo-square.png" width="200px"
+								 style="float:left;border-radius:50%;margin-right:15px;shape-outside: circle();"
+						/>
+						<a href="https://www.massmine.org/">MassMine</a>: Command line tool designed for researchers to simplify the collection and use of data from online sources such as social media networks
+					</p>
+				</section>
+			</section>
+
+			<!-- LEGALITIES & ETHICS -->
+			<section>
+				
+				<section>
+					<h2>Scraping Legalities &amp; Ethics</h2>
+					<p>Can I / should I do it?</p>
+				</section>
+
+				<section>
+					<p>Yes, but it's tricky</p>
+				</section>
+
+				<section class="lonely-bg contain-me" data-background="img/hazel-elaborate.gif"></section>
+
+				<!-- IRB's Slow -->
+				<section data-background="img/slow-irb.gif" class="bg-img-txt-overlay">
+					<h2>Problem #1</h2>
+					<p>IRB has been slow to understand and assess these matters.</p>
+				</section>
+
+				<!-- PROB 2: TOS's Suck -->
+				<section class="bg-img-txt-overlay" data-background="img/think-winona.gif">
+					<h2>Problem #2</h2>
+					<p>Company Terms of Services are increasingly more complex—there's no way NOT to breach their TOS.</p>
+				</section>
+
+				<!-- SOLUTION: Learn from Experts -->
+				<section>
+					<h2>Solution</h2>
+					<p>
+						Get acquainted with what computational social scientists are recommending and doing
+					</p>
+				</section>
+
+				<!-- Legalities -->
+				<section>
+					<h2>Be informed TOS cases</h2>
+				</section>
+
+				<!-- POST API AGE -->
+				<section>
+					<h2>"Post-API Age"</h2>
+					<blockquote>
+						"When companies can restrict or eliminate API access at any time, for any reason, and without any recourse, computational researchers and students need to seriously consider how to proceed. We find ourselves in a situation where heavy investment in teaching and learning platform-specific methods can be rendered useless overnight: This is what I mean by 'the post-API age.'" (Freelon, 2018, p. 665)
+					</blockquote>
+				</section>
+
+				<!-- POST API TIMELINE -->
+				<section>
+					<figure>
+						<img src="img/freelon-post-api-timeline.png" alt="Short timeline of events leading to significant API changes across social media platforms" />
+						<figcaption class="not-centered small">
+							src: Freelon's (2018) talk at "<a href="https://www.youtube.com/watch?v=GWpCHh54pXU&ab_channel=SummerInstituteinComputationalSocialScience">Summer Institute in Computational Social Science</a>"
+						</figcaption>
+					</figure>	
+				</section>
+
+				<!-- POST API EXAMPLE -->
+				<section class="flex_slide">
+					<h2>"We know what you're doing"</h2>
+					<figure>
+						<img src="img/we-know-what-you-doing.webp" alt="Screencap of We know what you are doing site">
+						<figcaption class="not-centered small">
+							src: Bindley, "<a href="https://www.huffpost.com/entry/we-know-what-youre-doing_n_1628754">Huffington Post</a>
+						</figcaption>
+					</figure>
+					<p>Used Facebook "Search" API to aggregate embarrassing Facebook posts.</p>
+				</section>
+
+				<!-- WS as TRESSPASSING -->
+				<section class="bg-img-txt-overlay" data-background="img/musk.gif">
+					<h2>We await Musky volatile decisions</h2>
+				</section>
+
+				<!-- Legalities -->
+				<section>
+					<h2>Be informed about legal cases</h2>
+				</section>
+
+				<!-- SANDVIG CASE -->
+				<section>
+					<h2>Internet Researcher Sandvig: Case No. 1:16-cv-1368</h2>
+					<blockquote>
+						Although no adverse action has been taken against any of the plaintiffs, even though some have already engaged in the proposed information-gathering activity, they seek to raise a preenforcement challenge to the constitutionality of a provision of the Computer Fraud and Abuse Act (“CFAA”), 18 U.S.C. § 1030(a)(2)(C), under the theory that the provision runs afoul of the First and Fifth Amendments to the United States Constitution. (p. 8)
+					</blockquote>
+				</section>
+
+				<!-- WS as TRESSPASSING -->
+				<section class="bg-img-txt-overlay" data-background="img/merica-broad-city.gif">
+					<h2>Webscraping == "Tresspassing" &amp; "Stealing"</h2>
+					<blockquote>
+						"the government has argued that <strong>Web servers are private property</strong>, and that anyone who exceeds authorized access is trespassing “on” them" (Sandvig)
+					</blockquote>
+				</section>
+
+				<!-- SANDVIG: CFAA -->
+				<section class="she-hulk bg-img-txt-overlay" data-background="img/she-hulk-4th-wall.gif">
+					<h2>Webscraping == "Tresspassing" &amp; "Stealing"</h2>
+					<blockquote>
+						"the CFAA was used to say that because Web servers are private, users are also wasting capacity on these servers, effectively stealing a server's processing cycles that the owner would rather use for other things." (Sandvig)
+					</blockquote>
+				</section>
+
+				<!-- SANDVIG: THIEF -->
+				<section class="hamburglar bg-img-txt-overlay" data-background="img/hamburglar.gif">
+					<p>
+						Sandvig: CFAA frames webscraping as a "cartoon thief with a bag of electrons."
+					</p>
+				</section>
+
+				<!-- SANDVIG: WRONG META -->
+				<section class="princess-bride bg-img-txt-overlay" data-background="img/not-means-what-think.gif">
+					<p>
+						<strong>Sandvig</strong>: "Are Internet researchers and data journalists “trespassing” and “stealing”? <em>These are the wrong metaphors</em>."
+					</p>
+				</section>
+
+				<!-- NOT LEGALLY CLOSED CASE -->
+				<section>
+					<h2>Isn't this TOS-problem a big ole "Nope. We can't do this."?</h2>
+					
+					<blockquote>
+						"... a cursory investigation of the history of web scraping reveals the area to be heavily contested and in many cases untested in legal process ... [J]udges have taken a lenient view where the scraping has been performed against user generated data that is publically viewable." (Perriam et al., 2020, p. 21)
+					</blockquote>
+				</section>
+
+				<!-- HIQ vs LINKEDIN -->
+				<section>
+					<h2>Case: HiQ vs. Linkedin</h2>
+					<blockquote>
+						"HiQ violated Linkedin terms of service by scraping user details from the site, [but] judges ruled in favour of HiQ by supporting HiQ's counter claim that Linkedin's blocking of their scrapers amounted to anti-competitive practices" (p. 21)
+					</blockquote>
+				</section>
+
+				<!-- WHOTARGETSME -->
+				<section>
+					<h2>Case: Whotargets.me</h2>
+					<ul>
+						<li>
+							scrapes political ads from user's social news feeds
+						</li>
+						<li>
+							sends ads to a central location for analysis
+						</li>
+						<li>
+							Generates report for user about how political groups have been microtargeting them and compares them against geo/demographic groups
+						</li>
+					</ul>
+				</section>
+
+				<!-- WHOTARGETSME VIOLATIONS -->
+				<section>
+					<p>
+						Whotargets.me violates the ToS. Yet, "the service claims 20,000 users in over 80 countries, with their work heavily cited in the press" (Perriam et al., 2020, p. 22).
+					</p>
+				</section>
+
+				<section class="lonely-bg" data-background="img/whats-ur-point.gif"></section>
+
+				<section class="bg-img-txt-overlay" data-background="img/cat-surprise.gif">
+					<h2>Surprise!</h2>
+					<p>
+						¯\_(ツ)_/¯ ToS' are designed to protect the companies' commercial interest
+					</p>
+				</section>
+
+				<section class="lonely-bg contain-me" data-background="img/david-what-now.gif"></section>
+
+				<!-- RECOMMENDATIONS -->
+				<section class="bg-img-txt-overlay" data-background="img/korg-revolution.gif">
+					<h2>Freelon's Recommendations</h2>
+					<ol>
+						<li>
+							Learn how to scrape the web, and
+						</li>
+						<li>
+							Understand the potential consequences of violating platforms' TOS by doing so (p. 665).
+						</li>
+					</ol>
+				</section>
+
+				<!-- Use authorized methods -->
+				<section>
+					<h2>Use Authorized Methods Whenever Possible</h2>
+				</section>
+
+				<!-- TOS RISKS -->
+				<section>
+					<h2>Understand the Risks of Violating TOS</h2>
+					<ul>
+						<li>Companies can blacklist you</li>
+						<li>Companies can file lawsuits: Aaron Swartz's 2013 CFAA prosecution - max 50 years and $1 million fine</li>
+					</ul>
+				</section>
+
+				<!-- TOS vs SUBJECTS -->
+				<section>
+					<h2>TOS Compliance != Human Subject Compliance</h2>
+					<ul>
+						<li class="fragment">
+							TOS Compliance == "respecting the business prerogatives" (Freelon, p. 667)
+						</li>
+						<li class="fragment">
+							Subjects Compliance == "respecting the dignity and privacy of the platform’s users" (Freelon, p. 667)
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Re: Human Subject Compliance</h2>
+					<ul>
+						<li>
+							How does your scraping plan account for the collection and retention of sensitive information from vulnerable populations?
+						</li>
+						<li class="fragment">
+							How can researchers apply and transform standard researcher subjects compliance practices?
+						</li>
+						<li class="fragment">
+							We should continue to develop IRB channels to understand exempt vs. non-exempt studies.
+						</li>
+					</ul>
+				</section>
+
+				<!-- BREAK -->
+				<section class="lonely-bg contain-me" data-background="img/schitts-break.gif"></section>
+
+				<!-- BREAKOUT DISCUSSION -->
+				<section class="flex_slide">
+					<h2>Breakout Session - Review a Case Together</h2>
+					<p class="not-centered">
+						Review my latest scraping job from Kaggle.com for a study. [<a href="lindgren-kaggle-IRB-22-976-human-subjects-research-determination.pdf">PDF</a>]
+					</p>
+					<ul>
+						<li class="fragment">
+							Am I conducting ethical research?
+						</li>
+						<li class="fragment">
+							Am I at risk of violation? How? See section 4 of Kaggle's <a href="https://www.kaggle.com/terms">TOS</a>.
+						</li>
+						<li class="fragment">
+							Other questions or insights?
+						</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<!-- REQUIREMENTS -->
+			<section>
+				<section>
+					<h2>Requirements</h2>
+				</section>
+
+				<!-- MAC Requirements -->
+				<section>
+					<h2>MAC Requirements</h2>
+					<p class="src">(src: <a href="https://docs.python-guide.org/starting/install3/osx/">docs.python-guide.org</a>)</p>
+					<ol>
+						<li>
+							Apple Developer <a href="https://developer.apple.com/account/" target="_blank" rel="noopenner">account</a>
+						</li>
+						<li>
+							<a href="https://developer.apple.com/download/all/?q=Xcode" target="_blank" rel="noopenner">Xcode</a>
+						</li>
+						<li>
+							<a href="https://brew.sh/#install" target="_blank" rel="noopenner">Homebrew</a>
+						</li>
+						<li>
+							Install Python 3 with Homebrew
+						</li>
+					</ol>
+				</section>
+
+				<!-- WINDOWS Requirements -->
+				<section class="not-centered">
+					<h2>WINDOWS Requirements</h2>
+					<p class="src center">(src: realpython.com)</p>
+					<p>
+						Follow the below tutorial and be sure to select the "Add to path" option.
+					</p>
+					<ol>
+						<li>
+							Install Python 3 with the "<a href="https://realpython.com/installing-python/#step-1-download-the-full-installer" target="_blank" rel="noopenner">Full Installer</a>"
+						</li>
+					</ol>
+				</section>
+
+			</section>
+
+			<!-- SETUP SESSIONS -->
+			<section>
+
+				<section>
+					<h2>Setup Breakout Sessions</h2>
+					<ul>
+						<li>
+							MAC
+						</li>
+						<li>
+							WINDOWS
+						</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<!-- MAC SETUP -->
+			<section>
+				
+				<!-- APPLE DEV SIGNUP -->
+				<section class="not-centered">
+					<h2>Apple Dev Account</h2>
+					<p>
+						Sign up for an Apple Developer <a href="https://developer.apple.com/account/" target="_blank" rel="noopenner">account</a> with your Apple ID.
+					</p>
+				</section>
+
+				<!-- APPLE Xcode -->
+				<section>
+					<h2>Xcode</h2>
+					<p>
+						Download and install <a href="https://developer.apple.com/download/all/?q=Xcode" target="_blank" rel="noopenner">Xcode</a>.
+					</p>
+					<img src="img/xcode.png"
+					/>
+				</section>
+
+				<!-- INSTALL HOMEBREW -->
+				<section>
+					<h2>Install <a href="https://brew.sh/#install" target="_blank" rel="noopenner">Homebrew</a></h2>
+					<p>
+						Open "Terminal" and copy/paste the following into it:
+					</p>
+					<pre style="padding:1rem 10px;scrollbar-color: rebeccapurple green;scrollbar-width: thin;" class="hljs"><code class="hljs">/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+				</section>
+
+				<!-- INSTALL PYENV -->
+				<section>
+					<h2>Install <code>pyenv</code> with Homebrew</h2>
+					<p>pynev will help you switch between multiple versions of Python on your computer.</p>
+					<pre style="padding:1rem 10px;scrollbar-color: rebeccapurple green;scrollbar-width: thin;" class="hljs"><code class="hljs">brew install pyenv</code></pre>
+				</section>
+
+				<!-- CONFIG ENV -->
+				<section>
+					<h2>Configure your Mac's environment</h2>
+					<p>Configure your environmental variables, so pyenv manages your packages</p>
+					<pre style="padding:1rem 10px;scrollbar-color: rebeccapurple green;scrollbar-width: thin;" class="hljs"><code class="hljs">echo 'eval "$(pyenv init -)"' >> ~/.bash_profile</code></pre>
+					<p>then</p>
+					<pre class="hljs"><code class="hljs">source ~/.bash_profile</code></pre>
+				</section>
+
+				<!-- CHECK PYTHON VERSINOS -->
+				<section>
+					<h2>Check Python 3 versions with pyenv</h2>
+					<pre style="padding:1rem 10px;scrollbar-color: rebeccapurple green;scrollbar-width: thin;" class="hljs"><code class="hljs">pyenv versions</code></pre>
+				</section>
+
+				<!-- SET PYTHON VERSION -->
+				<section>
+					<h2>Set Python 3 version with pyenv</h2>
+					<pre style="padding:1rem 10px;scrollbar-color: rebeccapurple green;scrollbar-width: thin;" class="hljs"><code class="hljs">pyenv global 3.9.8</code></pre>
+				</section>
+				
+				<!-- TEST INSTALL -->
+				<section data-background="img/cat.gif">
+					<h2>Check the Python Version</h2>
+					<p>
+						Open "Terminal" and write the following:
+					</p>
+					<pre class="hljs"><code class="hljs">python -V</code><code class="hljs">Python 2.7</code></pre>
+					<p>or</p>
+					<pre class="hljs"><code class="hljs">python3 -V</code><code class="hljs">Python 3.9.8</code></pre>
+				</section>
+			</section>
+
+			<!-- PREVIEW? -->
+			<section>
+				<section class="lonely-bg contain-me bg-img-txt-overlay" data-background="img/mother-of-demos.gif">
+					<h2>Want a quick demo?</h2>
+				</section>
+			</section>
+
+
+			<!-- TEMPLATES -->
+
+			<!-- codeblock -->
+			<!-- <section data-background="img/cat.gif">
+				<h2>Abram o PyCharm!</h2>
+				<pre><code class="hljs">print("To Programando em Python")</code></pre>
+			</section> -->
+			
+			<!-- MD codeblock -->
+			<!-- <section data-markdown>
+				<script type="text/template">
+					## Variáveis
+					<span class="fragment highlight-yellow">As variáveis podem ser dos tipos:</span>
+					```
+						//valores numéricos inteiros (int)
+						numero1 = 10 
+						//valores numéricos com pontos flutuantes (float)     
+						numero2 = 5.0 
+						//valor tipo lógico verdadeiro (boolean)
+						aprovado =  True
+						//valor tipo lógico falso (boolean)
+						resultado = False 
+						//valor tipo texto (string)
+						nome = "Víctor Romário" 
+
+					```
+				</script>
+			</section> -->
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/search/search.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+
+</body>
+</html>
