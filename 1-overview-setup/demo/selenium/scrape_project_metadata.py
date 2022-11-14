@@ -10,9 +10,17 @@ import csv
 from time import sleep
 import chromedriver_autoinstaller
 
+#######################################
+
+#_______SETUP SELENIUM DRIVER_________#
+
+#######################################
+
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
                                       # and if it doesn't exist, download it automatically,
                                       # then add chromedriver to path
+
+#__________DRIVER OPTIONS___________#
 
 options = Options()
 options.binary_location = "/Applications/GoogleChrome.app/Contents/MacOS/GoogleChrome"
@@ -25,14 +33,15 @@ options.add_argument("--disable-extensions")
 options.add_argument("window-size=200,200")
 
 driver = webdriver.Chrome(options=options)
-driver.set_window_size(200, 200)
+driver.set_window_size(800, 800)
+
 # Search the "Code" page with "Machine Learning" keyword sorted by most votes in descending order
 driver.get('https://www.kaggle.com/code?sortBy=voteCount&searchQuery=%22Machine+Learning%22&language=Python&types=datasets')
 
 wait = WebDriverWait(driver, 20)
 actions = ActionChains(driver)
 
-csv_file = open('kaggle_covid_competitions_project_data.csv', 'w', encoding='utf-8')
+csv_file = open('./kaggle_covid_competitions_project_data.csv', 'w', encoding='utf-8')
 writer = csv.writer(csv_file)
 
 proj_rows = ['kernel_name','kernel_path','vote_count','medal','comment_count']

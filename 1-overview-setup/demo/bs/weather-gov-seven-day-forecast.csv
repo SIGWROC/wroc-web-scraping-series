@@ -1,10 +1,10 @@
 date,period,short_desc,desc,temp_fahrenheit
-2022-11-11 09:37:59.456756,VeteransDay,Heavy Rain," Showers, with thunderstorms also possible after 10am. Some of the storms could produce heavy rainfall.  High near 69. Southeast wind around 10 mph.  Chance of precipitation is 100%. New rainfall amounts between three quarters and one inch possible. ",69
-2022-11-11 09:37:59.456760,Tonight,Showers thenSlight ChanceShowers," Showers and possibly a thunderstorm before midnight, then a slight chance of showers between midnight and 3am.  Low around 53. South wind 7 to 13 mph becoming west after midnight. Winds could gust as high as 26 mph.  Chance of precipitation is 100%. New precipitation amounts between a quarter and half of an inch possible. ",53
-2022-11-12 09:37:59.456762,Saturday,ChanceShowers," A chance of showers, mainly after 11am.  Partly sunny, with a high near 57. West wind around 6 mph.  Chance of precipitation is 30%. New precipitation amounts of less than a tenth of an inch possible. ",57
-2022-11-12 09:37:59.456763,SaturdayNight,Slight ChanceShowers," A slight chance of showers before 1am.  Mostly cloudy, with a low around 32. Northwest wind 6 to 10 mph.  Chance of precipitation is 20%.",32
-2022-11-13 09:37:59.456765,Sunday,Mostly Sunny," Mostly sunny, with a high near 41. Northwest wind 9 to 14 mph, with gusts as high as 23 mph. ",41
-2022-11-13 09:37:59.456766,SundayNight,Mostly Clear," Mostly clear, with a low around 24.",24
-2022-11-14 09:37:59.456767,Monday,Mostly Sunny," Mostly sunny, with a high near 45.",45
-2022-11-14 09:37:59.456768,MondayNight,Partly Cloudy," Partly cloudy, with a low around 26.",26
-2022-11-15 09:37:59.456769,Tuesday,ChanceRain/Snowthen ChanceRain," A chance of snow before 10am, then a chance of rain and snow between 10am and 11am, then a chance of rain after 11am.  Mostly cloudy, with a high near 41. Chance of precipitation is 50%.",41
+2022-11-11 14:58:26.984030,VeteransDay,Showers, Showers and possibly a thunderstorm.  High near 68. Southeast wind around 10 mph.  Chance of precipitation is 100%. New rainfall amounts between a quarter and half of an inch possible. ,68
+2022-11-11 14:58:26.984036,Tonight,Showers thenChanceShowers," Showers, mainly before 11pm.  Low around 53. South wind 7 to 13 mph becoming west after midnight. Winds could gust as high as 26 mph.  Chance of precipitation is 90%. New precipitation amounts between a quarter and half of an inch possible. ",53
+2022-11-12 14:58:26.984037,Saturday,ChanceShowers," A chance of showers, mainly after 11am.  Partly sunny, with a high near 57. West wind around 6 mph.  Chance of precipitation is 30%. New precipitation amounts of less than a tenth of an inch possible. ",57
+2022-11-12 14:58:26.984058,SaturdayNight,Slight ChanceShowers," A slight chance of showers before 1am.  Mostly cloudy, with a low around 32. Northwest wind 6 to 10 mph.  Chance of precipitation is 20%.",32
+2022-11-13 14:58:26.984063,Sunday,Mostly Sunny," Mostly sunny, with a high near 41. Northwest wind 9 to 14 mph, with gusts as high as 23 mph. ",41
+2022-11-13 14:58:26.984064,SundayNight,Mostly Clear," Mostly clear, with a low around 24.",24
+2022-11-14 14:58:26.984066,Monday,Mostly Sunny," Mostly sunny, with a high near 45.",45
+2022-11-14 14:58:26.984066,MondayNight,Partly Cloudy," Partly cloudy, with a low around 26.",26
+2022-11-15 14:58:26.984067,Tuesday,ChanceRain/Snowthen ChanceRain," A chance of snow before 10am, then a chance of rain and snow between 10am and 11am, then a chance of rain after 11am.  Mostly cloudy, with a high near 41. Chance of precipitation is 50%.",41
